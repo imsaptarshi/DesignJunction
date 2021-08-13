@@ -5,7 +5,9 @@ const NewsLetter: React.FC<{}> = () => {
   return (
     <div>
       <div className="mx-auto pt-4 w-16 h-16 bg-white rounded-full transform translate-y-8">
-        <ArrowDown className="mx-auto" primaryColor="black" size="large" />
+        <div className="flex justify-center">
+          <ArrowDown primaryColor="black" size="large" />
+        </div>
       </div>
       <div className="px-10 lg:px-0 text-center light-gradient rounded-xl text-xl md:text-2xl lg:text-3xl font-medium lg:font-bold pt-20 pb-10 lg:mx-20">
         <div className="px-6 md:px-20 xl:px-60">
