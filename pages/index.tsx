@@ -5,7 +5,7 @@ import Landing from "../sections/Landing";
 
 const Home: NextPage = () => {
   return (
-    <main className="pb-8">
+    <main className="pb-8 bg-blue-200">
       <div className="lg:pt-8 bg-blue-gradient">
         <Navbar />
         <Landing />

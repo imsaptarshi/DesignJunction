@@ -3,7 +3,7 @@ import { Search } from "react-iconly";
 
 const SearchBar: React.FC<{}> = () => {
   return (
-    <div className="flex space-x-5 text-blue-800.10 inner-shadow rounded-full md:w-96 theme-border mt-6 h-16 px-8 py-2">
+    <div className="flex space-x-5 text-blue-800.10 inner-shadow rounded-full md:w-96 theme-border h-16 px-8 py-2">
       <div className="mt-2.5">
         <Search />
       </div>

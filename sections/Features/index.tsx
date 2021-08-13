@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { Calendar, Folder, Unlock } from "react-iconly";
+import TopPostDaily from "../../components/Badges/topPostDaily.component";
 import NewsLetter from "../Newsletter";
 
 const Features: React.FC<{}> = () => {
@@ -14,7 +15,10 @@ const Features: React.FC<{}> = () => {
   };
 
   return (
-    <div className="dark-gradient w-full">
+    <div style={{ zIndex: 2 }} className="relative dark-gradient w-full">
+      <div className="block lg:hidden absolute transform -translate-y-6 pl-6 lg:pl-16">
+        <TopPostDaily />
+      </div>
       <div className="newsletter-holder relative mx-auto 2xl:max-w-screen-2xl px-6 lg:px-48 pt-20 font-medium text-white">
         <div className="grid gap-y-12 grid-cols-2 md:grid-cols-4 lg:justify-around mb-16">
           <FeatureItem

@@ -6,7 +6,10 @@ import TopPostDaily from "../../components/Badges/topPostDaily.component";
 
 const Landing: React.FC<{}> = () => {
   return (
-    <div className="mx-auto 2xl:max-w-screen-2xl relative max-h-screen lg:flex px-10 lg:px-20">
+    <div
+      style={{ zIndex: 1 }}
+      className="mx-auto 2xl:max-w-screen-2xl relative max-h-screen lg:flex px-10 lg:px-20"
+    >
       <div className="xl:text-6xl lg:text-5xl text-4xl text-blue-800 font-black lg:mt-20 lg:ml-10 xl:ml-20">
         <span>
           {" "}
@@ -16,7 +19,7 @@ const Landing: React.FC<{}> = () => {
         </span>
         <br />
         <span className="text-bg-blue-gradient-2 ">by Designers</span>
-        <div className="md:w-6/12 lg:w-5/12 text-blue-800.5 font-medium xl:text-base text-sm mt-4 font-body">
+        <div className="md:w-6/12 lg:w-5/12 text-blue-800.5 font-medium xl:text-base text-sm mt-4 mb-8 font-body">
           Design Junction is a one-stop resource library for Designers and
           Creatives with curated list of best resources handpicked from around
           the web.
@@ -36,7 +39,7 @@ const Landing: React.FC<{}> = () => {
           alt="Hero Image"
         />
       </div>
-      <div className="absolute bottom-0 transform translate-y-6 lg:translate-y-0 lg:pl-16">
+      <div className="hidden lg:block absolute bottom-0 transform translate-y-6 lg:translate-y-0 lg:pl-16">
         <TopPostDaily />
       </div>
     </div>
