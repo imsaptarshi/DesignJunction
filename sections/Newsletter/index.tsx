@@ -9,11 +9,11 @@ const NewsLetter: React.FC<{}> = () => {
           <ArrowDown primaryColor="black" size="large" />
         </div>
       </div>
-      <div className="px-10 lg:px-0 text-center light-gradient rounded-xl text-xl md:text-2xl lg:text-3xl font-medium lg:font-bold pt-20 pb-10 lg:mx-20">
-        <div className="px-4 md:px-20 xl:px-60">
+      <div className="px-10 lg:px-0 text-center light-gradient rounded-xl text-xl md:text-2xl lg:text-3xl font-medium lg:font-medium xl:font-bold pt-20 pb-14 lg:mx-20">
+        <div className="px-4 md:px-20 xl:px-52">
           Be the first to be notified about newly added resources!
         </div>
-        <div className="mx-auto mt-8 flex h-14 md:w-96 shadow-inner bg-blue-500.5 rounded-full">
+        <div className="mx-auto mt-8 flex h-14 md:w-96 inner-shadow bg-blue-500.5 rounded-full">
           <input
             type="email"
             name="email"

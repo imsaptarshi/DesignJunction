@@ -47,11 +47,9 @@
 }
 
 .light-gradient {
-  background: radial-gradient(
-    185.98% 744.59% at 18.31% 123.56%,
-    #4f3dfe 26.23%,
-    #6fa0ff 100%
-  );
+  background: url("/background3.svg");
+  background-size: cover;
+  background-position: center;
 }
 
 .newsletter-holder {
@@ -70,7 +68,7 @@
 
 @media (min-width: 1024px) {
   .landing-page {
-    height: 88vh;
+    min-height: 88vh;
   }
 }
 
@@ -119,12 +117,6 @@
   transform: scale(1.06);
 }
 
-#logo:hover {
-  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>✨</text></svg>")
-      16 0,
-    auto;
-}
-
 #PH:hover {
   cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🚀</text></svg>")
       16 0,
@@ -133,4 +125,8 @@
 
 #heroimage {
   animation: float 6s ease-in-out infinite;
+}
+
+.sidebar {
+  position: sticky;
 }

@@ -15,9 +15,9 @@ const SearchBar: React.FC<Props> = ({ type }) => {
         <div
           className={`flex space-x-5 bg-white ${
             isCrumbActive ? "border-blue-500 border-2" : ""
-          } text-blue-800.10 rounded-xl w-36 md:w-80 shadow-md border-2 border-white hover:border-blue-500 duration-300 px-4`}
+          } text-blue-800.10 rounded-xl w-36 md:w-52 lg:w-80 shadow-md border-2 border-white hover:border-blue-500 duration-300 px-4`}
         >
-          <div className="mt-3">
+          <div className="mt-2.5">
             <Search />
           </div>
           <input
