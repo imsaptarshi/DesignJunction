@@ -16,7 +16,7 @@ const Features: React.FC<{}> = () => {
 
   return (
     <div style={{ zIndex: 2 }} className="relative dark-gradient w-full">
-      <div className="block lg:hidden absolute transform -translate-y-6 pl-6 lg:pl-16">
+      <div className="justify-center w-full lg:hidden flex md:block absolute transform -translate-y-6 md:pl-8 lg:pl-20">
         <TopPostDaily />
       </div>
       <div className="newsletter-holder relative mx-auto 2xl:max-w-screen-2xl px-6 lg:px-48 pt-20 font-medium text-white">

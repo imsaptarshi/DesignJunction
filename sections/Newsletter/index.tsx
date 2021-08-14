@@ -17,10 +17,10 @@ const NewsLetter: React.FC<{}> = () => {
           <input
             type="email"
             name="email"
-            className="newsletter-input pl-8 w-5/12 md:w-60 bg-transparent outline-none text-base lg:text-lg"
+            className="rounded-full newsletter-input pl-8 w-5/12 md:w-60 bg-transparent outline-none text-base lg:text-lg"
             placeholder="Enter your email"
           />
-          <button className="ml-auto bg-blue-700 rounded-full text-sm font-medium lg:text-base lg:font-semibold px-6 py-2">
+          <button className="ml-auto hover:bg-blue-900 hover:shadow-lg duration-200 bg-blue-700 rounded-full text-sm font-medium lg:text-base lg:font-semibold px-6 py-2">
             Count me in
           </button>
         </div>

@@ -9,6 +9,17 @@ const TopPostDaily: React.FC<{}> = () => {
     >
       {/*eslint-disable-next-line @next/next/no-img-element*/}
       <img
+        id="PH"
+        className="hidden lg:block shadow-xl"
+        src="/topDailyPH.svg"
+        alt="Design Junction - One-stop resource library for designers and creatives | Product Hunt"
+        style={{ width: "250px", height: "54px" }}
+        width="250"
+        height="54"
+      />
+      {/*eslint-disable-next-line @next/next/no-img-element*/}
+      <img
+        className="block lg:hidden"
         src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=307333&theme=light&period=daily"
         alt="Design Junction - One-stop resource library for designers and creatives | Product Hunt"
         style={{ width: "250px", height: "54px" }}

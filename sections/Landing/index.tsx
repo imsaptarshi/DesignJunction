@@ -1,16 +1,22 @@
-import React from "react";
-import Image from "next/image";
-import heroImageMobile from "../../public/heroImageMobile.png";
-import SearchBar from "../../components/Inputs/searchbar.component";
+import React, { useEffect, useState } from "react";
+import SearchBar from "../../components/SearchBar/searchbar.component";
 import TopPostDaily from "../../components/Badges/topPostDaily.component";
+import useMousePosition from "../../hooks/mousePosition";
 
 const Landing: React.FC<{}> = () => {
+  const { x, y } = useMousePosition();
+  var moveX = (Number(x) * 1) / 95;
+  var movey = (Number(y) * 1) / 95;
+
+  var currX = -20 + moveX;
+  var currY = -160 - movey;
+
   return (
     <div
       style={{ zIndex: 1 }}
-      className="mx-auto 2xl:max-w-screen-2xl relative max-h-screen lg:flex px-10 lg:px-20"
+      className="landing-page mx-auto 2xl:max-w-screen-2xl relative lg:flex px-10 lg:px-20"
     >
-      <div className="xl:text-6xl lg:text-5xl text-4xl text-blue-800 font-black lg:mt-20 lg:ml-10 xl:ml-20">
+      <div className="herotext xl:text-6xl lg:text-5xl text-4xl text-blue-800 font-black lg:mt-20 lg:ml-10 xl:ml-20">
         <span>
           {" "}
           Quality Free <br />
@@ -34,8 +40,20 @@ const Landing: React.FC<{}> = () => {
       <div>
         {/* eslint-disable-next-line @next/next/no-img-element*/}
         <img
+          style={{
+            right: currX,
+            top: currY,
+          }}
+          id="heroimage"
           src="/heroImage.png"
-          className="absolute xl:mr-16 -top-28 w-7/12 h-7/12 hidden md:block lg:w-8/12 lg:h-8/12 xl:-top-40 lg:-top-36 right-0  xl:w-7/12 xl:h-7/12"
+          className="absolute xl:mr-16 w-7/12 h-7/12 hidden lg:block lg:w-8/12 lg:h-8/12 xl:w-7/12 xl:h-7/12"
+          alt="Hero Image"
+        />
+        {/* eslint-disable-next-line @next/next/no-img-element*/}
+        <img
+          id="heroimage"
+          src="/heroImage.png"
+          className="heroimage right-0 -top-16 absolute xl:mr-16 w-7/12 h-7/12 hidden md:block lg:hidden lg:w-8/12 lg:h-8/12 xl:w-7/12 xl:h-7/12"
           alt="Hero Image"
         />
       </div>

@@ -67,3 +67,70 @@
   box-shadow: 0px 4px 13px rgba(33, 64, 124, 0.18);
   backdrop-filter: blur(21px);
 }
+
+@media (min-width: 1024px) {
+  .landing-page {
+    height: 88vh;
+  }
+}
+
+@keyframes slideBottomToTop {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-up {
+  0% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-20px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+
+.navitem:hover {
+  transform: scale(1.06);
+}
+
+#logo:hover {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>✨</text></svg>")
+      16 0,
+    auto;
+}
+
+#PH:hover {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🚀</text></svg>")
+      16 0,
+    auto;
+}
+
+#heroimage {
+  animation: float 6s ease-in-out infinite;
+}

@@ -16,10 +16,10 @@ const Navbar: React.FC<{}> = () => {
             <span className="font-medium">Junction</span>
           </div>
         </div>
-        <div className="cursor-pointer duration-300 hover:text-blue-600 font-medium text-sm">
+        <div className="navitem cursor-pointer duration-300 font-medium text-sm">
           Twitter
         </div>
-        <div className="cursor-pointer duration-300 font-bold text-blue-600 text-sm mt-1">
+        <div className="navitem cursor-pointer duration-300 font-bold text-blue-600 text-sm">
           Submit a resource
         </div>
       </div>
