@@ -1,14 +1,19 @@
 import React from "react";
+import { ChevronDown } from "react-iconly";
+import { X } from "react-feather";
 import ResourceCard from "../../components/Card/resourceCard.component";
 import SearchBar from "../../components/SearchBar/searchbar.component";
 import CardSkeleton from "../../components/Skeletons/card.skeleton";
 import { useSearch } from "../../providers/search.provider";
 import SideBar from "./sidebar";
+import { Categories, SideBarItem } from "./sidebar";
+import { Menu, MenuItem, MenuDivider } from "@szhsin/react-menu";
+import "@szhsin/react-menu/dist/index.css";
 
 type Props = {};
 
 const Resources: React.FC<Props> = () => {
-  const { query, resources } = useSearch();
+  const { query, resources, setQuery } = useSearch();
 
   if (resources.data !== []) {
     return (
@@ -17,12 +22,44 @@ const Resources: React.FC<Props> = () => {
         <div className="flex md:space-x-10">
           <SideBar />
           <div id="resources" className="w-full">
-            <div className="flex items-center text-gray-400 justify-between font-bold text-2xl">
+            <div className="flex items-center text-gray-400 justify-between font-bold text-xl md:text-2xl">
               <div className="text-blue-600">
                 {query.length < 1 ? (
-                  <>All Resources</>
+                  <>
+                    <div className="flex items-center space-x-1">
+                      <div>All Resources</div>{" "}
+                      <Menu
+                        className="font-medium"
+                        menuButton={
+                          <div className="block md:hidden">
+                            <ChevronDown />
+                          </div>
+                        }
+                      >
+                        {Categories.map((data, key) => (
+                          <MenuItem key={key}>
+                            <SideBarItem name={data} />
+                          </MenuItem>
+                        ))}
+                      </Menu>
+                    </div>
+                  </>
                 ) : (
-                  <> &quot;{query}&quot;</>
+                  <>
+                    <div className="flex flex-wrap items-center space-x-2">
+                      <div className="truncate w-32 md:w-40 lg:w-auto lg:max-w-xs xl:max-w-lg">
+                        {'"'}
+                        {query}
+                        {'"'}
+                      </div>
+                      <div
+                        className="cursor-pointer"
+                        onClick={() => setQuery("")}
+                      >
+                        <X className="text-blue-800" />
+                      </div>
+                    </div>
+                  </>
                 )}
               </div>
               <SearchBar type="crumb" />
