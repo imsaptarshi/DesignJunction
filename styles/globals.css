@@ -127,6 +127,11 @@
   animation: float 6s ease-in-out infinite;
 }
 
-.sidebar {
-  position: sticky;
+.light-shadow {
+  box-shadow: 0px 7px 15px rgba(33, 64, 124, 0.04);
+}
+
+.card:hover {
+  box-shadow: 0px 7px 15px rgba(33, 64, 124, 0.04);
+  transform: scale(1.01);
 }

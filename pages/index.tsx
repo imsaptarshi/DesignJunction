@@ -6,7 +6,7 @@ import Resources from "../sections/Resources";
 
 const Home: NextPage = () => {
   return (
-    <main className="overflow-x-hidden pb-8 bg-blue-200">
+    <main className="pb-8 bg-blue-200">
       <div className="lg:pt-8 bg-blue-gradient">
         <Navbar />
         <Landing />

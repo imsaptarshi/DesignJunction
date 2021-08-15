@@ -8,14 +8,20 @@ function handler(
 ) {
   switch (req.method) {
     case "GET": Resource.find()
-      .then(data => {
+      .then((data: any) => {
         res.status(200).json(data)
       })
-      .catch(err => {
+      .catch((err: any) => {
         res.status(400).send(err)
       })
       break
     default: res.status(400).send("invalid_request")
+  }
+}
+
+export const config = {
+  api: {
+    externalResolver: true
   }
 }
 
