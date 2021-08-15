@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-
 const Schema = mongoose.Schema;
 
 export interface TResource {
@@ -10,7 +9,7 @@ export interface TResource {
     image: String
 }
 
-const ResourceModel = new Schema<TResource>({
+const ResourceModel: TResource = new Schema({
     title: {
         type: String,
         required: true
@@ -33,11 +32,11 @@ const ResourceModel = new Schema<TResource>({
     }
 });
 
-let Resource: mongoose.Model<TResource>;
+let Resource: any;
 try {
-    Resource = mongoose.model<TResource>('Resource')
+    Resource = mongoose.model('Resource')
 } catch (error) {
-    Resource = mongoose.model<TResource>('Resource', ResourceModel)
+    Resource = mongoose.model('Resource', ResourceModel)
 }
 
 export default Resource;

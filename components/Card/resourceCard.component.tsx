@@ -26,15 +26,17 @@ const ResourceCard: React.FC<Props> = ({
   return (
     <div className="card shadow-sm cursor-pointer w-full p-5 duration-300 bg-white rounded-xl">
       <a href={redirect} target="_blank" rel="noreferrer">
-        <div
-          style={{
-            backgroundImage: `url("${image}")`,
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-          }}
-          className="border-2 border-gray-100 w-full h-40 md:h-52 lg:h-40 bg-gray-400 rounded-xl mb-4"
-        ></div>
+        <div className="card-container relative overflow-hidden rounded-xl border-2 border-gray-100 mb-4">
+          <div
+            style={{
+              backgroundImage: `url("${image}")`,
+              backgroundPosition: "center",
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+            }}
+            className="card-holder duration-300 w-full h-40 md:h-52 lg:h-40 bg-gray-400 rounded-xl"
+          ></div>
+        </div>
       </a>
       <a href={redirect} target="_blank" rel="noreferrer">
         <div className="font-bold text-blackDisplay">{title}</div>

@@ -2,11 +2,11 @@ import React from "react";
 import ResourceCard from "../../components/Card/resourceCard.component";
 import SearchBar from "../../components/SearchBar/searchbar.component";
 import CardSkeleton from "../../components/Skeletons/card.skeleton";
-import { useResources } from "../../helpers/getResources";
+import { useResources } from "../../helpers/useResources";
 import SideBar from "./sidebar";
 
 const Resources: React.FC<{}> = () => {
-  const { data, error }: any = useResources();
+  const { data, isLoading, error }: any = useResources();
 
   if (data) {
     return (
@@ -35,7 +35,7 @@ const Resources: React.FC<{}> = () => {
         </div>
       </div>
     );
-  } else {
+  } else if (isLoading || error) {
     return (
       <div className="mx-auto 2xl:max-w-screen-2xl bg-blue-200 px-6 md:px-10 lg:px-20">
         <div className="h-80 md:h-40 lg:h-48 xl:h-44"></div>
@@ -55,6 +55,8 @@ const Resources: React.FC<{}> = () => {
         </div>
       </div>
     );
+  } else {
+    return <></>;
   }
 };
 

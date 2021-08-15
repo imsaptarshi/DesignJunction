@@ -133,5 +133,9 @@
 
 .card:hover {
   box-shadow: 0px 7px 15px rgba(33, 64, 124, 0.04);
-  transform: scale(1.01);
+  transform: scale(1.007);
+}
+
+.card:hover .card-holder {
+  transform: scale(1.03) rotate(1.1deg);
 }

@@ -16,7 +16,11 @@ const SideBar: React.FC<{}> = () => {
   ];
 
   const SideBarItem = ({ name }: any) => {
-    return <div className="font-regular text-base text-blue-800">{name}</div>;
+    return (
+      <div className="navitem duration-200 cursor-pointer hover:font-medium font-regular text-base text-blue-800">
+        {name}
+      </div>
+    );
   };
 
   return (
