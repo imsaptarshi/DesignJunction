@@ -1,16 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import SearchBar from "../../components/SearchBar/searchbar.component";
 import TopPostDaily from "../../components/Badges/topPostDaily.component";
-import useMousePosition from "../../hooks/mousePosition";
 
 const Landing: React.FC<{}> = () => {
-  const { x, y } = useMousePosition();
-  var moveX = (Number(x) * 1) / 95;
-  var movey = (Number(y) * 1) / 95;
-
-  var currX = -20 + moveX;
-  var currY = -160 - movey;
-
   return (
     <div
       style={{ zIndex: 1 }}
@@ -41,8 +33,8 @@ const Landing: React.FC<{}> = () => {
         {/* eslint-disable-next-line @next/next/no-img-element*/}
         <img
           style={{
-            right: currX,
-            top: currY,
+            right: 0,
+            top: -145,
           }}
           id="heroimage"
           src="/heroImage.png"

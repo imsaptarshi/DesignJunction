@@ -32,7 +32,9 @@ const Home: NextPage = ({ data }: any) => {
 };
 
 Home.getInitialProps = async () => {
-  const res = await fetch("http://localhost:3000/api/get/resources");
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_DOMAIN}/api/get/resources`
+  );
   const json = await res.json();
   return { data: json };
 };
