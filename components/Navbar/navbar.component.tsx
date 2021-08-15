@@ -31,7 +31,7 @@ const Navbar: React.FC<{}> = () => {
       <>
         <div
           className="fixed justify-between w-full flex mobile-navbar py-4 px-6"
-          style={{ zIndex: 100 }}
+          style={{ zIndex: 200 }}
         >
           <div
             id="logo"

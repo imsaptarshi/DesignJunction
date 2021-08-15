@@ -1,4 +1,6 @@
 import React from "react";
+import SearchResource from "../../helpers/searcher";
+import { useSearch } from "../../providers/search.provider";
 
 const SideBar: React.FC<{}> = () => {
   const Categories = [
@@ -16,8 +18,22 @@ const SideBar: React.FC<{}> = () => {
   ];
 
   const SideBarItem = ({ name }: any) => {
+    const { setQuery, resources, setResources } = useSearch();
+
     return (
-      <div className="navitem duration-200 cursor-pointer hover:font-medium font-regular text-base text-blue-800">
+      <div
+        onClick={() => {
+          setQuery(name);
+          const _resources = SearchResource(resources.data, name);
+          setResources({
+            data: resources.data,
+            searched_data: _resources,
+            isLoading: false,
+            error: false,
+          });
+        }}
+        className="navitem duration-200 cursor-pointer hover:font-medium font-regular text-base text-blue-800"
+      >
         {name}
       </div>
     );

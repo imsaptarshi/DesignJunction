@@ -9,6 +9,10 @@
   font-family: "Red Hat Display", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .bg-blue-gradient {
   background: url("/background.svg");
   background-size: cover;

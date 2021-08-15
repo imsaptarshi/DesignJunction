@@ -5,6 +5,6 @@ export function useResources() {
     return {
         data: data,
         isLoading: !error && !data,
-        isError: error
+        error: error
     };
 }

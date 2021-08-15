@@ -1,4 +1,6 @@
 import React from "react";
+import SearchResource from "../../helpers/searcher";
+import { useSearch } from "../../providers/search.provider";
 
 type Props = {
   title: String;
@@ -15,9 +17,23 @@ const ResourceCard: React.FC<Props> = ({
   image,
   redirect,
 }) => {
+  const { query, setQuery, resources, setResources } = useSearch();
+
   const TagItem = ({ name }: any) => {
     return (
-      <div className="hover:bg-blue-600 hover:text-blue-200 duration-200 bg-blue-300 text-blue-600 font-regular py-1 px-3 rounded-full">
+      <div
+        onClick={() => {
+          setQuery(name);
+          const _resources = SearchResource(resources.data, name);
+          setResources({
+            data: resources.data,
+            searched_data: _resources,
+            isLoading: false,
+            error: false,
+          });
+        }}
+        className="hover:bg-blue-600 hover:text-blue-200 duration-200 bg-blue-300 text-blue-600 font-regular py-1 px-3 rounded-full"
+      >
         {name}
       </div>
     );
@@ -34,7 +50,7 @@ const ResourceCard: React.FC<Props> = ({
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
             }}
-            className="card-holder duration-300 w-full h-40 md:h-52 lg:h-40 bg-gray-400 rounded-xl"
+            className="card-holder duration-300 w-full h-40 md:h-52 lg:h-40 bg-gray-300 rounded-xl"
           ></div>
         </div>
       </a>
