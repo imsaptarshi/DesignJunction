@@ -74,6 +74,7 @@ const Resources: React.FC<Props> = () => {
                       tags={_data.tags}
                       image={_data.image}
                       redirect={_data.redirect}
+                      isFeatured={_data.isFeatured}
                     />
                   ))
                 : resources.searched_data.map((_data: any, key: any) => (

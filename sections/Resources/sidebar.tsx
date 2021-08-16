@@ -30,6 +30,7 @@ export const SideBarItem = ({ name }: any) => {
           isLoading: false,
           error: false,
         });
+        window.location.href = "#resources";
       }}
       className="navitem duration-200 cursor-pointer hover:font-medium font-regular text-base text-blue-800"
     >

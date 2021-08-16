@@ -6,7 +6,9 @@ export interface TResource {
     description: String,
     tags: String[],
     redirect: String,
-    image: String
+    image: String,
+    isFeatured: boolean,
+    isAdvertised: boolean
 }
 
 const ResourceModel: TResource = new Schema({
@@ -29,6 +31,14 @@ const ResourceModel: TResource = new Schema({
     image: {
         type: String,
         required: true
+    },
+    isFeatured: {
+        type: Boolean,
+        required: false
+    },
+    isAdvertised: {
+        type: Boolean,
+        required: false
     }
 });
 

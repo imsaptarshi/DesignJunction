@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import SearchResource from "../../helpers/searcher";
 import { useSearch } from "../../providers/search.provider";
@@ -8,6 +9,8 @@ type Props = {
   tags: String[];
   image: String;
   redirect: string;
+  isFeatured?: boolean;
+  isAdvertised?: boolean;
 };
 
 const ResourceCard: React.FC<Props> = ({
@@ -16,6 +19,8 @@ const ResourceCard: React.FC<Props> = ({
   tags,
   image,
   redirect,
+  isFeatured,
+  isAdvertised,
 }) => {
   const { query, setQuery, resources, setResources } = useSearch();
 
@@ -31,6 +36,7 @@ const ResourceCard: React.FC<Props> = ({
             isLoading: false,
             error: false,
           });
+          window.location.href = "#resources";
         }}
         className="hover:bg-blue-600 hover:text-blue-200 duration-200 bg-blue-300 text-blue-600 font-regular py-1 px-3 rounded-full"
       >
@@ -40,7 +46,16 @@ const ResourceCard: React.FC<Props> = ({
   };
 
   return (
-    <div className="card shadow-sm cursor-pointer w-full p-5 duration-300 bg-white rounded-xl">
+    <div className="relative card shadow-sm cursor-pointer w-full p-5 duration-300 bg-white rounded-xl">
+      {isFeatured ? (
+        <img
+          src="/featured.svg"
+          alt="featured"
+          className="z-10 absolute top-3 left-0"
+        />
+      ) : (
+        <></>
+      )}
       <a href={redirect} target="_blank" rel="noreferrer">
         <div className="card-container relative overflow-hidden rounded-xl border-2 border-gray-100 mb-4">
           <div
