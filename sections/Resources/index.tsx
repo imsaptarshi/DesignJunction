@@ -7,7 +7,7 @@ import CardSkeleton from "../../components/Skeletons/card.skeleton";
 import { useSearch } from "../../providers/search.provider";
 import SideBar from "./sidebar";
 import { Categories, SideBarItem } from "./sidebar";
-import { Menu, MenuItem, MenuDivider } from "@szhsin/react-menu";
+import { Menu, MenuItem } from "@szhsin/react-menu";
 import "@szhsin/react-menu/dist/index.css";
 
 type Props = {};
@@ -18,10 +18,11 @@ const Resources: React.FC<Props> = () => {
   if (resources.data !== []) {
     return (
       <div className="mx-auto 2xl:max-w-screen-2xl bg-blue-200 px-6 md:px-10 lg:px-20">
-        <div className="h-80 md:h-40 lg:h-48 xl:h-44"></div>
+        <div className="h-60 md:h-20 lg:h-48 xl:h-44"></div>
+        <div id="resources" className="h-20 lg:h-8"></div>
         <div className="flex md:space-x-10">
           <SideBar />
-          <div id="resources" className="w-full">
+          <div className="w-full">
             <div className="flex items-center text-gray-400 justify-between font-bold text-xl md:text-2xl">
               <div className="text-blue-600">
                 {query.length < 1 ? (
