@@ -9,11 +9,12 @@ import SideBar from "./sidebar";
 import { Categories, SideBarItem } from "./sidebar";
 import { Menu, MenuItem } from "@szhsin/react-menu";
 import "@szhsin/react-menu/dist/index.css";
+import SearchResource from "../../helpers/searcher";
 
 type Props = {};
 
 const Resources: React.FC<Props> = () => {
-  const { query, resources, setQuery } = useSearch();
+  const { query, resources, setQuery, setResources } = useSearch();
 
   if (resources.data !== []) {
     return (
@@ -38,7 +39,23 @@ const Resources: React.FC<Props> = () => {
                         }
                       >
                         {Categories.map((data, key) => (
-                          <MenuItem key={key}>
+                          <MenuItem
+                            onClick={() => {
+                              setQuery(data);
+                              const _resources = SearchResource(
+                                resources.data,
+                                name
+                              );
+                              setResources({
+                                data: resources.data,
+                                searched_data: _resources,
+                                isLoading: false,
+                                error: false,
+                              });
+                              window.location.href = "#resources";
+                            }}
+                            key={key}
+                          >
                             <SideBarItem name={data} />
                           </MenuItem>
                         ))}
@@ -68,25 +85,10 @@ const Resources: React.FC<Props> = () => {
             <div className="mt-8 grid gap-6 lg:grid-cols-2 xl:grid-cols-3 auto-cols-auto">
               {query.length < 1
                 ? resources.data.map((_data: any, key: any) => (
-                    <ResourceCard
-                      key={key}
-                      title={_data.title}
-                      description={_data.description}
-                      tags={_data.tags}
-                      image={_data.image}
-                      redirect={_data.redirect}
-                      isFeatured={_data.isFeatured}
-                    />
+                    <ResourceCard key={key} {..._data} />
                   ))
                 : resources.searched_data.map((_data: any, key: any) => (
-                    <ResourceCard
-                      key={key}
-                      title={_data.title}
-                      description={_data.description}
-                      tags={_data.tags}
-                      image={_data.image}
-                      redirect={_data.redirect}
-                    />
+                    <ResourceCard key={key} {..._data} />
                   ))}
             </div>
           </div>

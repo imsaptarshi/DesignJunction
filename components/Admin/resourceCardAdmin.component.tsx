@@ -43,15 +43,14 @@ const ResourceCardAdmin: React.FC<Props> = ({
   if (!isEditing) {
     return (
       <div className="relative card shadow-sm cursor-pointer w-full p-5 duration-300 bg-white rounded-xl">
-        {isFeatured ? (
-          <img
-            src="/featured.svg"
-            alt="featured"
-            className="z-10 absolute top-3 left-0"
-          />
-        ) : (
-          <></>
-        )}
+        <div className="absolute top-3 left-0 z-10">
+          {isFeatured ? (
+            <img src="/featured.svg" alt="featured" className="mb-1" />
+          ) : (
+            <></>
+          )}
+          {isAdvertised ? <img src="/advertised.svg" alt="promoted" /> : <></>}
+        </div>
         <a href={String(redirect)} target="_blank" rel="noreferrer">
           <div className="card-container relative overflow-hidden rounded-xl border-2 border-gray-100 mb-4">
             <div

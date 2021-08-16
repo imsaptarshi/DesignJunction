@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
-import { useState } from "react";
+import Head from "next/head";
+import React, { useState } from "react";
 import ResourceCardAdmin from "../../components/Admin/resourceCardAdmin.component";
 import { useAdmin } from "../../providers/admin.provider";
 
@@ -10,7 +11,10 @@ const Admin: NextPage = ({ data }: any) => {
   if (password !== process.env.NEXT_PUBLIC_ADMIN_PASSWORD) {
     return (
       <main className="justify-center items-center p-6 flex flex-col">
-        <div className="font-bold">Admin Panel</div>
+        <Head>
+          <title>Design Junction | Admin Panel</title>
+        </Head>
+        <div className="font-bold mb-2">Admin Panel</div>
         <form
           onSubmit={(e) => {
             e.preventDefault();
@@ -32,6 +36,9 @@ const Admin: NextPage = ({ data }: any) => {
   } else {
     return (
       <main className="bg-blue-200 justify-center items-center p-6 flex flex-col font-bold">
+        <Head>
+          <title>Design Junction | Admin Panel</title>
+        </Head>
         Admin Panel
         <div className="flex space-x-5 flex-wrap  mt-4">
           <div className="cursor-pointer text-white px-6 py-2 rounded-xl text-xl bg-blue-600">

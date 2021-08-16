@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import type { NextPage } from "next";
+import Head from "next/head";
 import { useEffect } from "react";
 import Navbar from "../components/Navbar/navbar.component";
 import ScrollToTopButton from "../components/ScrollToTop/scrollToTop.component";
@@ -22,6 +23,9 @@ const Home: NextPage = ({ data }: any) => {
 
   return (
     <main className="pb-8 bg-blue-200">
+      <Head>
+        <title>Design Junction</title>
+      </Head>
       <div className="lg:pt-8 bg-blue-gradient">
         <Navbar />
         <Landing />
