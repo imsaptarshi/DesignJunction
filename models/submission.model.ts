@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
-export interface TResource {
+export interface TSubmission {
     title: String,
     description: String,
     tags: String[],
@@ -11,7 +11,7 @@ export interface TResource {
     isAdvertised?: boolean
 }
 
-const ResourceModel: TResource = new Schema({
+const SubmissionModel: TSubmission = new Schema({
     title: {
         type: String,
         required: true
@@ -30,7 +30,7 @@ const ResourceModel: TResource = new Schema({
     },
     image: {
         type: String,
-        required: true
+        required: false
     },
     isFeatured: {
         type: Boolean,
@@ -42,11 +42,11 @@ const ResourceModel: TResource = new Schema({
     }
 });
 
-let Resource: any;
+let Submission: any;
 try {
-    Resource = mongoose.model('Resource')
+    Submission = mongoose.model('Submission')
 } catch (error) {
-    Resource = mongoose.model('Resource', ResourceModel)
+    Submission = mongoose.model('Submission', SubmissionModel)
 }
 
-export default Resource;
+export default Submission;

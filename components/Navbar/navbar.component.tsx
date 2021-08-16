@@ -17,7 +17,13 @@ const Navbar: React.FC<{}> = () => {
           </div>
         </div>
         <div className="navitem cursor-pointer duration-300 font-medium text-sm">
-          Twitter
+          <a
+            href="https://www.twitter.com/exxyzee"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Twitter
+          </a>
         </div>
         <div className="navitem cursor-pointer duration-300 font-bold text-blue-600 text-sm">
           Submit a resource

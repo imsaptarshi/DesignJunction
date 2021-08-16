@@ -17,7 +17,6 @@ const isDocPresent = (list: Array<any>, query: String) => {
 }
 
 const SearchResource = (list: any, query: any) => {
-    console.log(list)
     const resources = []
 
     for (var i = 0; i < list.length; i++) {
