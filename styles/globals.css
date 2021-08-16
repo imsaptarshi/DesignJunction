@@ -105,6 +105,25 @@ html {
   }
 }
 
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
 @keyframes float {
   0% {
     transform: translatey(0px);
@@ -142,4 +161,12 @@ html {
 
 .card:hover .card-holder {
   transform: scale(1.03) rotate(1.1deg);
+}
+
+.totop.active {
+  animation: fade-in 0.3s ease-in-out;
+}
+
+.totop.notactive {
+  animation: fade-out 0.3s ease-in-out;
 }

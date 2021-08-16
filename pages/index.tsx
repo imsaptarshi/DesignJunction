@@ -2,6 +2,7 @@
 import type { NextPage } from "next";
 import { useEffect } from "react";
 import Navbar from "../components/Navbar/navbar.component";
+import ScrollToTopButton from "../components/ScrollToTop/scrollToTop.component";
 import { useSearch } from "../providers/search.provider";
 import Features from "../sections/Features";
 import Landing from "../sections/Landing";
@@ -27,6 +28,7 @@ const Home: NextPage = ({ data }: any) => {
       </div>
       <Features />
       <Resources />
+      <ScrollToTopButton />
     </main>
   );
 };
