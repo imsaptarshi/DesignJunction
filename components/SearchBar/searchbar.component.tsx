@@ -10,8 +10,8 @@ type Props = {
 const SearchBar: React.FC<Props> = ({ type }) => {
   const [isActive, setIsActive] = useState(false);
   const [isCrumbActive, setIsCrumbActive] = useState(false);
-  const { resources, setResources } = useSearch();
 
+  const { resources, setResources } = useSearch();
   const { query, setQuery } = useSearch();
 
   switch (type) {

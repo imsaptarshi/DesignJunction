@@ -1,7 +1,8 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import type { NextPage } from "next";
 import Head from "next/head";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
+import { Toaster } from "react-hot-toast";
 import Navbar from "../components/Navbar/navbar.component";
 import ScrollToTopButton from "../components/ScrollToTop/scrollToTop.component";
 import { useSearch } from "../providers/search.provider";
@@ -33,6 +34,7 @@ const Home: NextPage = ({ data }: any) => {
       <Features />
       <Resources />
       <ScrollToTopButton />
+      <Toaster position="top-right" />
     </main>
   );
 };

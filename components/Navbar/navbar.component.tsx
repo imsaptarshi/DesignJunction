@@ -26,7 +26,13 @@ const Navbar: React.FC<{}> = () => {
           </a>
         </div>
         <div className="navitem cursor-pointer duration-300 font-bold text-blue-600 text-sm">
-          Submit a resource
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSeJyO_COOGgKibjWfwX-s_1WjfMyHtdw7iHsZMQNy7E3ZP7tw/viewform"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Submit a resource
+          </a>
         </div>
       </div>
     );
@@ -50,7 +56,13 @@ const Navbar: React.FC<{}> = () => {
             </div>
           </div>
           <div className="cursor-pointer duration-300 font-bold text-blue-700 text-xs mt-1.5">
-            Submit a resource &gt;
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSeJyO_COOGgKibjWfwX-s_1WjfMyHtdw7iHsZMQNy7E3ZP7tw/viewform"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Submit a resource &gt;
+            </a>
           </div>
         </div>
         <div className="h-24"></div>

@@ -1,12 +1,15 @@
 import type { NextPage } from "next";
+import { Plus, X } from "react-feather";
 import Head from "next/head";
 import React, { useState } from "react";
+import NewCardAdmin from "../../components/Admin/newCardAdmin.component";
 import ResourceCardAdmin from "../../components/Admin/resourceCardAdmin.component";
 import { useAdmin } from "../../providers/admin.provider";
 
 const Admin: NextPage = ({ data }: any) => {
   const { password, setPassword } = useAdmin();
   const [_password, _setPassword] = useState("");
+  const [newCard, setNewCard] = useState(false);
 
   if (password !== process.env.NEXT_PUBLIC_ADMIN_PASSWORD) {
     return (
@@ -41,6 +44,14 @@ const Admin: NextPage = ({ data }: any) => {
         </Head>
         Admin Panel
         <div className="flex space-x-5 flex-wrap  mt-4">
+          <div
+            onClick={() => {
+              setNewCard(!newCard);
+            }}
+            className="flex justify-center items-center navitem duration-200 cursor-pointer text-white w-12 h-12 rounded-full text-xl bg-blue-600"
+          >
+            {newCard ? <X /> : <Plus />}
+          </div>
           <div className="cursor-pointer text-white px-6 py-2 rounded-xl text-xl bg-blue-600">
             Resources
           </div>
@@ -49,6 +60,7 @@ const Admin: NextPage = ({ data }: any) => {
           </div>
         </div>
         <div className="mt-8 grid gap-6 lg:grid-cols-2 xl:grid-cols-3 auto-cols-auto">
+          {newCard ? <NewCardAdmin /> : <></>}
           {data.map((_data: any, key: any) => (
             <ResourceCardAdmin {..._data} key={key} />
           ))}

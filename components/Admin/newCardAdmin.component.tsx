@@ -1,38 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
 import axios from "axios";
 import React, { useState } from "react";
-import { Delete } from "react-iconly";
 
-type Props = {
-  _id: any;
-  title: string | number | readonly string[] | undefined;
-  description: string | number | readonly string[] | undefined;
-  tags: String[];
-  image: string | number | readonly string[] | undefined;
-  redirect: string | number | readonly string[] | undefined;
-  isFeatured?: boolean;
-  isAdvertised?: boolean;
-};
+const NewCardAdmin: React.FC<{}> = ({}) => {
+  const [isEditing, setIsEditing] = useState(true);
 
-const ResourceCardAdmin: React.FC<Props> = ({
-  _id,
-  title,
-  description,
-  tags,
-  image,
-  redirect,
-  isFeatured,
-  isAdvertised,
-}) => {
-  const [isEditing, setIsEditing] = useState(false);
-
-  const [_title, setTitle] = useState(title);
-  const [_description, setDescription] = useState(description);
-  const [_image, setImage] = useState(image);
-  const [_redirect, setRedirect] = useState(redirect);
-  const [_tags, setTags] = useState(tags);
-  const [_isFeatured, setFeatured] = useState(isFeatured);
-  const [_isAdvertised, setAdvertised] = useState(isAdvertised);
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [image, setImage] = useState("");
+  const [redirect, setRedirect] = useState("");
+  const [tags, setTags] = useState<String[]>([]);
+  const [isFeatured, setFeatured] = useState(false);
+  const [isAdvertised, setAdvertised] = useState(false);
 
   const TagItem = ({ name }: any) => {
     return (
@@ -61,7 +40,7 @@ const ResourceCardAdmin: React.FC<Props> = ({
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
               }}
-              className="card-holder duration-300 w-full h-40 md:h-52 lg:h-40 bg-gray-300 rounded-xl"
+              className="card-holder duration-300 w-full h-40 md:h-52 lg:h-40 bg-gray-200 rounded-xl"
             ></div>
           </div>
         </a>
@@ -81,29 +60,6 @@ const ResourceCardAdmin: React.FC<Props> = ({
           >
             Edit
           </button>
-          <div
-            onClick={() => {
-              let pass = prompt("Enter admin pass");
-              if (pass === process.env.NEXT_PUBLIC_ADMIN_PASSWORD) {
-                axios
-                  .delete(`${process.env.NEXT_PUBLIC_DOMAIN}/api/delete/${_id}`)
-                  .then((res: any) => {
-                    console.log(res);
-                    alert(
-                      "Document deleted, Reload the page for changes to take effect"
-                    );
-                  })
-                  .catch((err: any) => {
-                    console.log(err);
-                  });
-              } else {
-                alert("Wrong password...");
-              }
-            }}
-            className="text-blue-600 pt-1 pl-1 hover:bg-gray-200 rounded-full w-8 h-8 items-center"
-          >
-            <Delete />
-          </div>
         </div>
       </div>
     );
@@ -116,7 +72,7 @@ const ResourceCardAdmin: React.FC<Props> = ({
             Title
             <input
               className="border-2 px-4 py-1 rounded-lg"
-              value={_title}
+              value={title}
               onChange={(e) => setTitle(e.target.value)}
               placeholder="Title"
             />
@@ -125,7 +81,7 @@ const ResourceCardAdmin: React.FC<Props> = ({
             Description
             <input
               className="border-2 px-4 py-1 rounded-lg"
-              value={_description}
+              value={description}
               onChange={(e) => setDescription(e.target.value)}
               placeholder="Description"
             />
@@ -134,7 +90,7 @@ const ResourceCardAdmin: React.FC<Props> = ({
             Image
             <input
               className="border-2 px-4 py-1 rounded-lg"
-              value={_image}
+              value={image}
               onChange={(e) => setImage(e.target.value)}
               placeholder="Image"
             />
@@ -143,7 +99,7 @@ const ResourceCardAdmin: React.FC<Props> = ({
             Redirect
             <input
               className="border-2 px-4 py-1 rounded-lg"
-              value={_redirect}
+              value={redirect}
               onChange={(e) => setRedirect(e.target.value)}
               placeholder="redirect"
             />
@@ -152,7 +108,7 @@ const ResourceCardAdmin: React.FC<Props> = ({
             Tags
             <input
               className="border-2 px-4 py-1 rounded-lg"
-              value={_tags.join(", ")}
+              value={tags.join(", ")}
               onChange={(e) => {
                 setTags(e.target.value.split(", "));
               }}
@@ -164,10 +120,10 @@ const ResourceCardAdmin: React.FC<Props> = ({
             <input
               type="checkbox"
               onChange={(e) => {
-                setFeatured(!_isFeatured);
+                setFeatured(!isFeatured);
               }}
               className="ml-2 border-2 px-4 py-1 rounded-lg"
-              defaultChecked={_isFeatured}
+              defaultChecked={isFeatured}
             />
           </div>
           <div className="flex items-center">
@@ -176,9 +132,9 @@ const ResourceCardAdmin: React.FC<Props> = ({
               type="checkbox"
               className="ml-2 border-2 px-4 py-1 rounded-lg"
               onChange={(e) => {
-                setAdvertised(!_isAdvertised);
+                setAdvertised(!isAdvertised);
               }}
-              defaultChecked={_isAdvertised}
+              defaultChecked={isAdvertised}
             />
           </div>
         </form>
@@ -196,24 +152,24 @@ const ResourceCardAdmin: React.FC<Props> = ({
             }}
             className="bg-gray-200 text-black px-6 py-1 hover:bg-gray-300 duration-200 rounded-xl"
           >
-            Cancel
+            Preview
           </button>
           <button
             onClick={() => {
               axios
-                .post(`${process.env.NEXT_PUBLIC_DOMAIN}/api/update/${_id}`, {
-                  title: _title,
-                  description: _description,
-                  image: _image,
-                  redirect: _redirect,
-                  tags: _tags,
-                  isFeatured: _isFeatured,
-                  isAdvertised: _isAdvertised,
+                .post(`${process.env.NEXT_PUBLIC_DOMAIN}/api/post/`, {
+                  title,
+                  description,
+                  image,
+                  redirect,
+                  tags,
+                  isAdvertised,
+                  isFeatured,
                 })
                 .then((res: any) => {
                   console.log(res);
                   alert(
-                    "Document updated, Reload the page for changes to take effect"
+                    "Document saved, Reload the page for changes to take effect"
                   );
                   setIsEditing(false);
                 })
@@ -231,4 +187,4 @@ const ResourceCardAdmin: React.FC<Props> = ({
   }
 };
 
-export default ResourceCardAdmin;
+export default NewCardAdmin;
