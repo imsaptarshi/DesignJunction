@@ -35,6 +35,7 @@ const NewsLetter: React.FC<{}> = () => {
                           reject();
                         } else {
                           setSubscribed(true);
+                          setEmail("");
                           resolve("success");
                         }
                       }, 2000);

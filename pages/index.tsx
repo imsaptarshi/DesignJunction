@@ -3,6 +3,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import React, { useEffect } from "react";
 import { Toaster } from "react-hot-toast";
+import Kofi from "../components/Badges/kofi.component";
 import Navbar from "../components/Navbar/navbar.component";
 import ScrollToTopButton from "../components/ScrollToTop/scrollToTop.component";
 import { useSearch } from "../providers/search.provider";
@@ -33,7 +34,7 @@ const Home: NextPage = ({ data }: any) => {
       </div>
       <Features />
       <Resources />
-      <ScrollToTopButton />
+      <Kofi />
       <Toaster position="top-right" />
     </main>
   );

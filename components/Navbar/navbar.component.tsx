@@ -31,7 +31,7 @@ const Navbar: React.FC<{}> = () => {
             target="_blank"
             rel="noreferrer"
           >
-            Submit a resource
+            Submit a resource &gt;
           </a>
         </div>
       </div>

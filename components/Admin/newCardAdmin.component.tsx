@@ -13,7 +13,7 @@ const NewCardAdmin: React.FC<{}> = ({}) => {
   const [isFeatured, setFeatured] = useState(false);
   const [isAdvertised, setAdvertised] = useState(false);
 
-  const TagItem = ({ name }: any) => {
+  const TagItem = ({ name }: { name: String }) => {
     return (
       <div className="hover:bg-blue-600 hover:text-blue-200 duration-200 bg-blue-300 text-blue-600 font-normal py-1 px-3 rounded-full">
         {name}
