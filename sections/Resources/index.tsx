@@ -33,7 +33,7 @@ const Resources: React.FC<Props> = () => {
                       <Menu
                         className="font-medium"
                         menuButton={
-                          <div className="block md:hidden">
+                          <div className="cursor-pointer block md:hidden">
                             <ChevronDown />
                           </div>
                         }
@@ -44,7 +44,7 @@ const Resources: React.FC<Props> = () => {
                               setQuery(data);
                               const _resources = SearchResource(
                                 resources.data,
-                                name
+                                data
                               );
                               setResources({
                                 data: resources.data,
