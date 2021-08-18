@@ -11,10 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <SearchProvider>
         <Head>
           <title>Design Junction</title>
-          <meta
-            name="title"
-            content="Design Junction | One-stop resource library for designers and creatives"
-          />
+          <meta name="title" content="Design Junction" />
           <meta
             name="description"
             content="Design Junction is a one-stop resource library for Designers and Creatives with curated list of best resources handpicked from around the web"
@@ -25,10 +22,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             property="og:url"
             content="https://design-junction.vercel.app/"
           />
-          <meta
-            property="og:title"
-            content="Design Junction | One-stop resource library for designers and creatives"
-          />
+          <meta property="og:title" content="Design Junction" />
           <meta
             property="og:image:alt"
             content="Design Junction is a one-stop resource library for Designers and Creatives with curated list of best resources handpicked from around the web"
@@ -44,10 +38,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             property="twitter:url"
             content="https://design-junction.vercel.app/"
           />
-          <meta
-            property="twitter:title"
-            content="Design Junction | One-stop resource library for designers and creatives"
-          />
+          <meta property="twitter:title" content="Design Junction" />
           <meta
             property="twitter:description"
             content="Design Junction is a one-stop resource library for Designers and Creatives with curated list of best resources handpicked from around the web"
