@@ -31,7 +31,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             property="og:description"
             content="Design Junction is a one-stop resource library for Designers and Creatives with curated list of best resources handpicked from around the web"
           />
-          <meta property="og:image" content="/screenshot.png" />
+          <meta property="og:image" content="/embed.png" />
 
           <meta property="twitter:card" content="summary_large_image" />
           <meta
@@ -43,7 +43,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             property="twitter:description"
             content="Design Junction is a one-stop resource library for Designers and Creatives with curated list of best resources handpicked from around the web"
           />
-          <meta property="twitter:image" content="/screenshot.png" />
+          <meta property="twitter:image" content="/embed.png" />
         </Head>
         <Component {...pageProps} />
       </SearchProvider>
