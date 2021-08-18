@@ -170,3 +170,13 @@ html {
 .totop.notactive {
   animation: fade-out 0.3s ease-in-out;
 }
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #21407c;
+}
