@@ -22,7 +22,7 @@ const Home: NextPage = ({ data }: any) => {
   }, [data, setResources]);
 
   return (
-    <main className="overflow-x-hidden pb-8 bg-blue-200">
+    <main className="overflow-x-hidden md:overflow-x-visible pb-8 bg-blue-200">
       <Head>
         <title>Design Junction</title>
       </Head>

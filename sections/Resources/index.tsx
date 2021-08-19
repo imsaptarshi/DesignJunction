@@ -18,7 +18,7 @@ const Resources: React.FC<Props> = () => {
 
   if (resources.data !== []) {
     return (
-      <div className="mx-auto 2xl:max-w-screen-2xl bg-blue-200 px-6 md:px-10 lg:px-20">
+      <div className="relative mx-auto 2xl:max-w-screen-2xl bg-blue-200 px-6 md:px-10 lg:px-20">
         <div className="h-60 md:h-20 lg:h-48 xl:h-44"></div>
         <div id="resources" className="h-20 lg:h-8"></div>
         <div className="flex md:space-x-10">

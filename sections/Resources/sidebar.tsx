@@ -52,7 +52,7 @@ const SideBar: React.FC<{}> = () => {
   return (
     <div
       style={{ height: "fit-content", zIndex: 100 }}
-      className="sticky left-0 top-10 hidden md:block"
+      className="sticky left-0 md:top-20 lg:top-10 hidden md:block"
     >
       <div className="light-shadow bg-white rounded-xl p-8 w-60">
         <div className="font-semibold text-lg text-blue-600 mb-4">
