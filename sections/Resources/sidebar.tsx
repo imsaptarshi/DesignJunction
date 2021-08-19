@@ -18,30 +18,37 @@ export const Categories = [
 ];
 
 export const SideBarItem = ({ name }: any) => {
-  const { setQuery, resources, setResources } = useSearch();
+  const { query, setQuery, resources, setResources } = useSearch();
 
   return (
-    <div
-      onClick={() => {
-        setQuery(name);
-        const _resources = SearchResource(resources.data, name);
-        setResources({
-          data: resources.data,
-          searched_data: _resources,
-          isLoading: false,
-          error: false,
-        });
-        window.location.href = "#resources";
-      }}
-      className="navitem duration-200 cursor-pointer hover:font-medium font-regular text-base text-blue-800"
-    >
-      {name}
+    <div className="relative flex items-center">
+      {query == name ? (
+        <div className="absolute -left-3 bg-blue-600 w-0.5 h-4"></div>
+      ) : (
+        <></>
+      )}
+      <div
+        onClick={() => {
+          setQuery(name);
+          const _resources = SearchResource(resources.data, name);
+          setResources({
+            data: resources.data,
+            searched_data: _resources,
+            isLoading: false,
+            error: false,
+          });
+          window.location.href = "#resources";
+        }}
+        className="navitem duration-200 cursor-pointer hover:font-medium font-regular text-base text-blue-800"
+      >
+        {name}
+      </div>
     </div>
   );
 };
 
 const SideBar: React.FC<{}> = () => {
-  const { resources, setResources, setQuery } = useSearch();
+  const { query, resources, setResources, setQuery } = useSearch();
   return (
     <div
       style={{ height: "fit-content", zIndex: 100 }}
@@ -52,21 +59,28 @@ const SideBar: React.FC<{}> = () => {
           All Resources
         </div>
         <div className="flex flex-col space-y-2">
-          <div
-            onClick={() => {
-              setQuery("Newly Added");
-              const _resources = SearchResource(resources.data, "", true);
-              setResources({
-                data: resources.data,
-                searched_data: _resources,
-                isLoading: false,
-                error: false,
-              });
-              window.location.href = "#resources";
-            }}
-            className="navitem duration-200 cursor-pointer hover:font-medium font-regular text-base text-blue-800"
-          >
-            Newly Added
+          <div className="relative flex items-center">
+            {query == "Newly Added" ? (
+              <div className="bg-blue-600 absolute -left-3 w-0.5 h-4"></div>
+            ) : (
+              <></>
+            )}
+            <div
+              onClick={() => {
+                setQuery("Newly Added");
+                const _resources = SearchResource(resources.data, "", true);
+                setResources({
+                  data: resources.data,
+                  searched_data: _resources,
+                  isLoading: false,
+                  error: false,
+                });
+                window.location.href = "#resources";
+              }}
+              className="navitem duration-200 cursor-pointer hover:font-medium font-regular text-base text-blue-800"
+            >
+              Newly Added
+            </div>
           </div>
           {Categories.map((data, key) => (
             <SideBarItem key={key} name={data} />

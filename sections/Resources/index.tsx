@@ -38,6 +38,27 @@ const Resources: React.FC<Props> = () => {
                           </div>
                         }
                       >
+                        <MenuItem
+                          onClick={() => {
+                            setQuery("Newly Added");
+                            const _resources = SearchResource(
+                              resources.data,
+                              "",
+                              true
+                            );
+                            setResources({
+                              data: resources.data,
+                              searched_data: _resources,
+                              isLoading: false,
+                              error: false,
+                            });
+                            window.location.href = "#resources";
+                          }}
+                        >
+                          <div className="navitem duration-200 cursor-pointer hover:font-medium font-regular text-base text-blue-800">
+                            Newly Added
+                          </div>
+                        </MenuItem>
                         {Categories.map((data, key) => (
                           <MenuItem
                             onClick={() => {
