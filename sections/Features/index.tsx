@@ -47,7 +47,7 @@ const Features: React.FC<{}> = () => {
           />
 
           <FeatureItem
-            logo={<img className="w-12 h-12" src="/money.svg" alt="money" />}
+            logo={<img className="w-14 h-14" src="/money.svg" alt="money" />}
             name={
               <>
                 Free <br /> Forever
