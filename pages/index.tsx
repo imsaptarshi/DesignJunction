@@ -3,6 +3,7 @@ import Head from "next/head";
 import React, { useEffect } from "react";
 import { Toaster } from "react-hot-toast";
 import Kofi from "../components/Badges/kofi.component";
+import Footer from "../components/Footer/footer.component";
 import Navbar from "../components/Navbar/navbar.component";
 import { useSearch } from "../providers/search.provider";
 import Features from "../sections/Features";
@@ -22,7 +23,7 @@ const Home: NextPage = ({ data }: any) => {
   }, [data, setResources]);
 
   return (
-    <main className="overflow-x-hidden md:overflow-x-visible pb-8 bg-blue-200">
+    <main className="relative overflow-x-hidden md:overflow-x-visible pb-8 bg-blue-200">
       <Head>
         <title>Design Junction</title>
       </Head>
@@ -33,6 +34,7 @@ const Home: NextPage = ({ data }: any) => {
       <Features />
       <Resources />
       <Kofi />
+      <Footer />
       <Toaster position="top-right" />
     </main>
   );
