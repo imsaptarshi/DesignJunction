@@ -27,7 +27,7 @@ const Navbar: React.FC<{}> = () => {
         </div>
         <div className="navitem cursor-pointer duration-300 font-bold text-blue-600 text-sm">
           <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSeJyO_COOGgKibjWfwX-s_1WjfMyHtdw7iHsZMQNy7E3ZP7tw/viewform"
+            href={String(process.env.NEXT_PUBLIC_RESOURCE_FORM)}
             target="_blank"
             rel="noreferrer"
           >
@@ -57,7 +57,7 @@ const Navbar: React.FC<{}> = () => {
           </div>
           <div className="cursor-pointer duration-300 font-bold text-blue-700 text-xs mt-1.5">
             <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSeJyO_COOGgKibjWfwX-s_1WjfMyHtdw7iHsZMQNy7E3ZP7tw/viewform"
+              href={String(process.env.NEXT_PUBLIC_RESOURCE_FORM)}
               target="_blank"
               rel="noreferrer"
             >

@@ -16,7 +16,7 @@ const isDocPresent = (list: Array<any>, query: String) => {
     return false;
 }
 
-const SearchResource = (list: any, query: any) => {
+const SearchResource = (list: any, query: any, sort?: boolean) => {
     const resources = []
 
     for (var i = 0; i < list.length; i++) {
@@ -30,8 +30,11 @@ const SearchResource = (list: any, query: any) => {
                 resources.push(list[i]);
         }
     }
-
-    return resources;
+    if (sort) {
+        return resources.reverse();
+    } else {
+        return resources;
+    }
 }
 
 export default SearchResource;

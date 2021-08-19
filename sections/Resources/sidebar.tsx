@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import SearchResource from "../../helpers/searcher";
 import { useSearch } from "../../providers/search.provider";
@@ -40,6 +41,7 @@ export const SideBarItem = ({ name }: any) => {
 };
 
 const SideBar: React.FC<{}> = () => {
+  const { resources, setResources, setQuery } = useSearch();
   return (
     <div
       style={{ height: "fit-content", zIndex: 100 }}
@@ -50,6 +52,22 @@ const SideBar: React.FC<{}> = () => {
           All Resources
         </div>
         <div className="flex flex-col space-y-2">
+          <div
+            onClick={() => {
+              setQuery("Newly Added");
+              const _resources = SearchResource(resources.data, "", true);
+              setResources({
+                data: resources.data,
+                searched_data: _resources,
+                isLoading: false,
+                error: false,
+              });
+              window.location.href = "#resources";
+            }}
+            className="navitem duration-200 cursor-pointer hover:font-medium font-regular text-base text-blue-800"
+          >
+            Newly Added
+          </div>
           {Categories.map((data, key) => (
             <SideBarItem key={key} name={data} />
           ))}

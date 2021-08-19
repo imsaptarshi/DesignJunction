@@ -14,61 +14,10 @@ const includes = (list: Array<String>, query: String) => {
 async function handler(req: NextApiRequest, res: NextApiResponse) {
   switch (req.method) {
     case "GET":
-      const { query } = req.query;
-      const cursor = Resource.find({
-        $or: [
-          { title: new RegExp(String(query), "i") },
-          { description: new RegExp(String(query), "i") },
-        ],
-      }).cursor();
-      const resourcesWithTitle = [];
-      for (
-        let doc = await cursor.next();
-        doc != null;
-        doc = await cursor.next()
-      ) {
-        resourcesWithTitle.push(doc); // Prints documents one at a time
+      if (req.query.query === "sort") {
+        const data = await Resource.find()
+        res.json(data.reverse());
       }
-      const tagCursor = await Resource.find();
-      const resourcesWithTag = [];
-      for (let i = 0; i < tagCursor.length; i++) {
-        if (includes(tagCursor[i].tags, String(query))) {
-          resourcesWithTag.push(tagCursor[i]);
-        }
-      }
-      const resources = [];
-      for (
-        let i = 0;
-        i < Math.min(resourcesWithTag.length, resourcesWithTitle.length);
-        i++
-      ) {
-        if (
-          String(resourcesWithTag[i]._id) === String(resourcesWithTitle[i]._id)
-        ) {
-          resources.push(resourcesWithTag[i]);
-        } else {
-          resources.push(resourcesWithTag[i]);
-          resources.push(resourcesWithTitle[i]);
-        }
-      }
-      if (resourcesWithTag.length > resourcesWithTitle.length) {
-        for (
-          let i = resourcesWithTitle.length;
-          i < resourcesWithTag.length;
-          i++
-        ) {
-          resources.push(resourcesWithTag[i]);
-        }
-      } else {
-        for (
-          let i = resourcesWithTag.length;
-          i < resourcesWithTitle.length;
-          i++
-        ) {
-          resources.push(resourcesWithTitle[i]);
-        }
-      }
-      res.json(resources);
 
       break;
     default:
