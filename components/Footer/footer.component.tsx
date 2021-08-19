@@ -9,7 +9,7 @@ const Footer: React.FC<{}> = () => {
         <div className="cursor-pointer flex items-center text-2xl space-x-3 text-white">
           <Image width="35" height="35" src={logo} alt="Design junction" />
           <div className="hidden md:block">
-            <span className="font-black">Design</span>
+            <span className="font-bold">Design</span>
             <span className="font-normal">Junction.</span>
           </div>
         </div>
