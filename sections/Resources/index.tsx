@@ -85,7 +85,7 @@ const Resources: React.FC<Props> = () => {
                   </>
                 ) : (
                   <div className="flex flex-wrap items-center space-x-2">
-                    <div className="truncate w-32 md:w-40 lg:w-auto lg:max-w-xs xl:max-w-lg">
+                    <div className="truncate w-28 md:w-40 lg:w-auto lg:max-w-xs xl:max-w-lg">
                       {'"'}
                       {query}
                       {'"'}
