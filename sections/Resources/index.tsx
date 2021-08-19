@@ -19,7 +19,7 @@ const Resources: React.FC<Props> = () => {
   if (resources.data !== []) {
     return (
       <div className="relative mx-auto 2xl:max-w-screen-2xl bg-blue-200 px-6 md:px-10 lg:px-20">
-        <div className="h-60 md:h-20 lg:h-48 xl:h-44"></div>
+        <div className="h-56 md:h-20 lg:h-48 xl:h-36"></div>
         <div id="resources" className="h-20 lg:h-8"></div>
         <div className="flex md:space-x-10">
           <SideBar />
@@ -111,6 +111,11 @@ const Resources: React.FC<Props> = () => {
                 : resources.searched_data.map((_data: any, key: any) => (
                     <ResourceCard key={key} {..._data} />
                   ))}
+              {resources.searched_data.length === 0 ? (
+                <>🐝 Nothing found ...</>
+              ) : (
+                <></>
+              )}
             </div>
           </div>
         </div>
