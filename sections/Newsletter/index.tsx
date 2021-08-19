@@ -32,6 +32,7 @@ const NewsLetter: React.FC<{}> = () => {
                     new Promise((resolve, reject) => {
                       setTimeout(() => {
                         if (status === "error") {
+                          setEmail("");
                           reject();
                         } else {
                           setSubscribed(true);
@@ -57,6 +58,7 @@ const NewsLetter: React.FC<{}> = () => {
                   onChange={(e) => {
                     setEmail(e.target.value);
                   }}
+                  value={email}
                   required
                   type="email"
                   name="email"
