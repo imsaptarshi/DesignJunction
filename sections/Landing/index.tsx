@@ -1,6 +1,9 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import SearchBar from "../../components/SearchBar/searchbar.component";
 import TopPostDaily from "../../components/Badges/topPostDaily.component";
+import heroImage from "../../public/heroImageMobile.png";
+import Image from "next/image";
 
 const Landing: React.FC<{}> = () => {
   return (
@@ -21,13 +24,11 @@ const Landing: React.FC<{}> = () => {
         </div>
         <SearchBar />
         <div className="block transform scale-150 translate-y-12 md:hidden">
-          {/* eslint-disable-next-line @next/next/no-img-element*/}
-          <img src="/heroImageMobile.png" className="" alt="Hero Image" />
+          <Image src={heroImage} className="" alt="Hero Image" />
         </div>
         <div className="hidden md:block md:h-24 lg:h-44 w-full"></div>
       </div>
       <div>
-        {/* eslint-disable-next-line @next/next/no-img-element*/}
         <img
           style={{
             right: 0,
@@ -38,7 +39,6 @@ const Landing: React.FC<{}> = () => {
           className="absolute xl:mr-16 w-7/12 h-7/12 hidden lg:block lg:w-8/12 lg:h-8/12 xl:w-7/12 xl:h-7/12"
           alt="Hero Image"
         />
-        {/* eslint-disable-next-line @next/next/no-img-element*/}
         <img
           id="heroimage"
           src="/heroImage.png"
