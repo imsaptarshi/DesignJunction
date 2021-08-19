@@ -1,11 +1,9 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import type { NextPage } from "next";
 import Head from "next/head";
 import React, { useEffect } from "react";
 import { Toaster } from "react-hot-toast";
 import Kofi from "../components/Badges/kofi.component";
 import Navbar from "../components/Navbar/navbar.component";
-import ScrollToTopButton from "../components/ScrollToTop/scrollToTop.component";
 import { useSearch } from "../providers/search.provider";
 import Features from "../sections/Features";
 import Landing from "../sections/Landing";
@@ -24,7 +22,7 @@ const Home: NextPage = ({ data }: any) => {
   }, [data, setResources]);
 
   return (
-    <main className="pb-8 bg-blue-200">
+    <main className="overflow-x-hidden pb-8 bg-blue-200">
       <Head>
         <title>Design Junction</title>
       </Head>

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 
 const TopPostDaily: React.FC<{}> = () => {
@@ -7,7 +8,6 @@ const TopPostDaily: React.FC<{}> = () => {
       target="_blank"
       rel="noreferrer"
     >
-      {/*eslint-disable-next-line @next/next/no-img-element*/}
       <img
         id="PH"
         className="hidden lg:block shadow-xl"
@@ -17,7 +17,6 @@ const TopPostDaily: React.FC<{}> = () => {
         width="250"
         height="54"
       />
-      {/*eslint-disable-next-line @next/next/no-img-element*/}
       <img
         className="block lg:hidden"
         src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=307333&theme=light&period=daily"

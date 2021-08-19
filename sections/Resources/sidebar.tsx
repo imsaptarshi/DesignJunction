@@ -13,7 +13,7 @@ export const Categories = [
   "Design System",
   "Job",
   "Font",
-  "Accesibility",
+  "Accessibility",
 ];
 
 export const SideBarItem = ({ name }: any) => {

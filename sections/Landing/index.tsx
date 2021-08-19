@@ -4,10 +4,7 @@ import TopPostDaily from "../../components/Badges/topPostDaily.component";
 
 const Landing: React.FC<{}> = () => {
   return (
-    <div
-      style={{ zIndex: 1 }}
-      className="landing-page mx-auto 2xl:max-w-screen-2xl relative lg:flex px-10 lg:px-20"
-    >
+    <div className="landing-page mx-auto 2xl:max-w-screen-2xl relative lg:flex px-10 lg:px-20">
       <div className="herotext xl:text-6xl lg:text-5xl text-4xl text-blue-800 font-black lg:mt-20 lg:ml-10 xl:ml-20">
         <span>
           {" "}
@@ -23,7 +20,7 @@ const Landing: React.FC<{}> = () => {
           the web.
         </div>
         <SearchBar />
-        <div className="block md:hidden">
+        <div className="block transform scale-150 translate-y-12 md:hidden">
           {/* eslint-disable-next-line @next/next/no-img-element*/}
           <img src="/heroImageMobile.png" className="" alt="Hero Image" />
         </div>

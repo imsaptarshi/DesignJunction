@@ -31,7 +31,7 @@ const Navbar: React.FC<{}> = () => {
             target="_blank"
             rel="noreferrer"
           >
-            Submit a resource &gt;
+            Suggest a resource &gt;
           </a>
         </div>
       </div>
@@ -61,7 +61,7 @@ const Navbar: React.FC<{}> = () => {
               target="_blank"
               rel="noreferrer"
             >
-              Submit a resource &gt;
+              Suggest a resource &gt;
             </a>
           </div>
         </div>

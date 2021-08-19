@@ -54,7 +54,7 @@ const SearchBar: React.FC<Props> = ({ type }) => {
             if (query.length > 0) {
               e.preventDefault();
               var myDiv = document.getElementById("resources");
-              myDiv?.scrollIntoView(true);
+              myDiv?.scrollIntoView();
               const _resources = SearchResource(resources.data, query);
               setResources({
                 data: resources.data,
@@ -64,12 +64,12 @@ const SearchBar: React.FC<Props> = ({ type }) => {
               });
             }
           }}
-          className={`hover:border-blue-500 ${
-            isActive ? "border-blue-500 border" : "theme-border"
-          } duration-300 flex space-x-5 text-blue-800.10 inner-shadow rounded-full md:w-96 h-16 px-8 py-2`}
+          className={`relative z-10 hover:border-blue-500 border ${
+            isActive ? "border-blue-500" : "theme-border"
+          } duration-300 flex space-x-3 items-center text-blue-800.10 bg-white inner-shadow rounded-full md:w-96 h-16 px-8 py-2`}
         >
-          <div className="mt-2.5">
-            <Search />
+          <div className="text-gray-400">
+            <Search size="medium" />
           </div>
           <input
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
