@@ -34,10 +34,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           />
 
           <meta property="og:type" content="website" />
-          <meta
-            property="og:url"
-            content="https://design-junction.vercel.app/"
-          />
+          <meta property="og:url" content="https://designjunction.xyz/" />
           <meta property="og:title" content="Design Junction" />
           <meta
             property="og:image:alt"
@@ -50,10 +47,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <meta property="og:image" content="/embed.png" />
 
           <meta property="twitter:card" content="summary_large_image" />
-          <meta
-            property="twitter:url"
-            content="https://design-junction.vercel.app/"
-          />
+          <meta property="twitter:url" content="https://designjunction.xyz/" />
           <meta property="twitter:title" content="Design Junction" />
           <meta
             property="twitter:description"
