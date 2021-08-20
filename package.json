@@ -23,6 +23,7 @@
     "swr": "^0.5.6"
   },
   "devDependencies": {
+    "@types/gtag.js": "0.0.7",
     "@types/react": "17.0.17",
     "@types/react-mailchimp-subscribe": "^2.1.1",
     "autoprefixer": "^10.3.1",
