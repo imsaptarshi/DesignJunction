@@ -1,34 +1,25 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<img src="./public/embed.png">
+<div style="text-align:center;font-weight:bold;font-size:xx-large">Design Junction</div>
+<div style="text-align:center;font-weight:medium;font-size:small">Design Junction is a one-stop resource library for Designers and Creatives with curated list of best resources handpicked from around the web.</div>
+<br/>
+<div style="text-align:center;font-weight:bold;font-size:xx-large"><a href="https://www.producthunt.com/posts/design-junction-2?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-design-junction-2" target="_blank"><img 
+style="width:200px" src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=307333&theme=light&period=daily" alt="Design Junction - One-stop free resource library for designers and creatives | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a></div>
 
-## Getting Started
+## **Quirks** ✨
 
-First, run the development server:
+- 📚 70+ Resources
+- 💰 Free Forever
+- 🔓 No signup Needed
+- 🌟 Updated Weekly
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+<br/>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## **Contribute to the Project** ✨
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- Help us to keep the project alive at https://ko-fi.com/exwhyzee
+- [Suggest or promote a resource](https://docs.google.com/forms/d/e/1FAIpQLSec-SOfIEdxqJSQsFQwI0DBH1pbMl4xNdgWlJs7pbVV4tnM7A/viewform)
+- Pull requests are welcome 🤍
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+<br/><br/>
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Made with 🤍 by [exwhyzee](https://twitter.com/exxyzee), [Sap](https://twitter.com/imsaptarshiii), [Denin](https://twitter.com/deninpaul_)

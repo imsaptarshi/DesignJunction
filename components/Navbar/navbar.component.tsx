@@ -27,7 +27,6 @@ const Navbar: React.FC<{}> = () => {
         </div>
         <div className="navitem cursor-pointer duration-300 font-bold text-blue-600 text-sm">
           <a
-            className="cursor-pointer"
             href={String(process.env.NEXT_PUBLIC_RESOURCE_FORM)}
             target="_blank"
             rel="noreferrer"
