@@ -52,6 +52,10 @@ const Resources: React.FC<Props> = () => {
                               isLoading: false,
                               error: false,
                             });
+                            //for desktop
+                            var myDiv = document.getElementById("resources");
+                            myDiv?.scrollIntoView();
+                            //for mobile devices
                             window.location.href = "#resources";
                           }}
                         >
@@ -73,6 +77,10 @@ const Resources: React.FC<Props> = () => {
                                 isLoading: false,
                                 error: false,
                               });
+                              //for desktop
+                              var myDiv = document.getElementById("resources");
+                              myDiv?.scrollIntoView();
+                              //for mobile devices
                               window.location.href = "#resources";
                             }}
                             key={key}

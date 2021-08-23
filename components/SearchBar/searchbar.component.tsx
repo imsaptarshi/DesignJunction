@@ -53,8 +53,11 @@ const SearchBar: React.FC<Props> = ({ type }) => {
           onSubmit={(e) => {
             if (query.length > 0) {
               e.preventDefault();
+              //for desktop
               var myDiv = document.getElementById("resources");
               myDiv?.scrollIntoView();
+              //for mobile devices
+              window.location.href = "#resources";
               const _resources = SearchResource(resources.data, query);
               setResources({
                 data: resources.data,
