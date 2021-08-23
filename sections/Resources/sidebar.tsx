@@ -48,6 +48,17 @@ export const SideBarItem = ({ name }: any) => {
 };
 
 const SideBar: React.FC<{}> = () => {
+  const removeQuery = (sort?: boolean) => {
+    const _resources = SearchResource(resources.data, "", sort);
+    setResources({
+      data: resources.data,
+      searched_data: _resources,
+      isLoading: false,
+      error: false,
+    });
+    window.location.href = "#resources";
+  };
+
   const { query, resources, setResources, setQuery } = useSearch();
   return (
     <div
@@ -55,7 +66,13 @@ const SideBar: React.FC<{}> = () => {
       className="sticky left-0 md:top-20 lg:top-10 hidden md:block"
     >
       <div className="light-shadow bg-white rounded-xl p-8 w-60">
-        <div className="font-semibold text-lg text-blue-600 mb-4">
+        <div
+          onClick={() => {
+            setQuery("");
+            removeQuery();
+          }}
+          className="cursor-pointer font-semibold text-lg text-blue-600 mb-4"
+        >
           All Resources
         </div>
         <div className="flex flex-col space-y-2">
@@ -68,14 +85,7 @@ const SideBar: React.FC<{}> = () => {
             <div
               onClick={() => {
                 setQuery("Newly Added");
-                const _resources = SearchResource(resources.data, "", true);
-                setResources({
-                  data: resources.data,
-                  searched_data: _resources,
-                  isLoading: false,
-                  error: false,
-                });
-                window.location.href = "#resources";
+                removeQuery(true);
               }}
               className="navitem duration-200 cursor-pointer hover:font-medium font-regular text-base text-blue-800"
             >
