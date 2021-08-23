@@ -66,9 +66,9 @@ const SearchBar: React.FC<Props> = ({ type }) => {
           }}
           className={`relative z-10 hover:border-blue-500 border ${
             isActive ? "border-blue-500" : "theme-border"
-          } duration-300 flex space-x-3 items-center text-blue-800.10 bg-white inner-shadow rounded-full md:w-96 h-16 px-8 py-2`}
+          } duration-300 flex space-x-3 items-center bg-white inner-shadow rounded-full md:w-96 h-16 px-8 py-2`}
         >
-          <div className="text-gray-400">
+          <div className="text-gray-500 mb-0.5">
             <Search size="medium" />
           </div>
           <input
@@ -78,7 +78,7 @@ const SearchBar: React.FC<Props> = ({ type }) => {
             autoComplete="off"
             onFocus={() => setIsActive(true)}
             onBlur={() => setIsActive(false)}
-            className="search-input rounded-full outline-none bg-transparent text-base w-full"
+            className="text-blue-800 font-normal search-input rounded-full outline-none bg-transparent text-base w-full"
             type="text"
             name="query"
             placeholder="Search from over 70+ resources"
