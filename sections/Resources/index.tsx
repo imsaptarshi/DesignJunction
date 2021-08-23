@@ -52,11 +52,9 @@ const Resources: React.FC<Props> = () => {
                               isLoading: false,
                               error: false,
                             });
-                            //for desktop
+
                             var myDiv = document.getElementById("resources");
                             myDiv?.scrollIntoView();
-                            //for mobile devices
-                            window.location.href = "#resources";
                           }}
                         >
                           <div className="navitem duration-200 cursor-pointer hover:font-medium font-regular text-base text-blue-800">
@@ -77,11 +75,9 @@ const Resources: React.FC<Props> = () => {
                                 isLoading: false,
                                 error: false,
                               });
-                              //for desktop
+
                               var myDiv = document.getElementById("resources");
                               myDiv?.scrollIntoView();
-                              //for mobile devices
-                              window.location.href = "#resources";
                             }}
                             key={key}
                           >

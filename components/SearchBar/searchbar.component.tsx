@@ -53,12 +53,6 @@ const SearchBar: React.FC<Props> = ({ type }) => {
           onSubmit={(e) => {
             if (query.length > 0) {
               e.preventDefault();
-              //for mobile devices
-              window.location.href = "#resources";
-              //for desktop
-              var myDiv = document.getElementById("resources");
-              myDiv?.scrollIntoView();
-
               const _resources = SearchResource(resources.data, query);
               setResources({
                 data: resources.data,
@@ -66,6 +60,9 @@ const SearchBar: React.FC<Props> = ({ type }) => {
                 isLoading: false,
                 error: false,
               });
+
+              var myDiv = document.getElementById("resources");
+              myDiv?.scrollIntoView();
             }
           }}
           className={`relative z-10 hover:border-blue-500 border ${

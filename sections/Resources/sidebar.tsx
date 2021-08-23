@@ -37,11 +37,8 @@ export const SideBarItem = ({ name }: any) => {
             isLoading: false,
             error: false,
           });
-          //for desktop
           var myDiv = document.getElementById("resources");
           myDiv?.scrollIntoView();
-          //for mobile devices
-          window.location.href = "#resources";
         }}
         className="navitem duration-200 cursor-pointer hover:font-medium font-regular text-base text-blue-800"
       >
@@ -60,11 +57,8 @@ const SideBar: React.FC<{}> = () => {
       isLoading: false,
       error: false,
     });
-    //for desktop
     var myDiv = document.getElementById("resources");
     myDiv?.scrollIntoView();
-    //for mobile devices
-    window.location.href = "#resources";
   };
 
   const { query, resources, setResources, setQuery } = useSearch();
