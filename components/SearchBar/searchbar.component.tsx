@@ -43,7 +43,7 @@ const SearchBar: React.FC<Props> = ({ type }) => {
             className="text-blue-800 rounded-full outline-none h-12 bg-transparent text-base w-full"
             type="text"
             name="query"
-            placeholder="Search from over 70+ resources"
+            placeholder="Search from over 100+ resources"
           />
         </div>
       );
@@ -82,7 +82,7 @@ const SearchBar: React.FC<Props> = ({ type }) => {
             className="text-blue-800 font-normal search-input rounded-full outline-none bg-transparent text-base w-full"
             type="text"
             name="query"
-            placeholder="Search from over 70+ resources"
+            placeholder="Search from over 100+ resources"
           />
         </form>
       );

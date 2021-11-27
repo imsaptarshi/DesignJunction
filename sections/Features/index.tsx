@@ -41,7 +41,7 @@ const Features: React.FC<{}> = () => {
             logo={<Folder primaryColor="white" size="xlarge" />}
             name={
               <>
-                70+ <br /> Resources
+                100+ <br /> Resources
               </>
             }
           />

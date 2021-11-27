@@ -7,7 +7,7 @@ style="width:200px" src="https://api.producthunt.com/widgets/embed-image/v1/top-
 
 ## **Quirks** ✨
 
-- 📚 70+ Resources
+- 📚 100+ Resources
 - 💰 Free Forever
 - 🔓 No signup Needed
 - 🌟 Updated Weekly
