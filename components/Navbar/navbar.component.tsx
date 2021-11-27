@@ -5,7 +5,7 @@ import logo from "../../public/logo.svg";
 const Navbar: React.FC<{}> = () => {
   const Desktop = () => {
     return (
-      <div className="mx-auto 2xl:max-w-screen-2xl flex font-display items-center space-x-8 px-20">
+      <div className="relative z-10 mx-auto 2xl:max-w-screen-2xl flex font-display items-center space-x-8 px-20">
         <div
           id="logo"
           className="cursor-pointer flex items-center text-xl space-x-3"
