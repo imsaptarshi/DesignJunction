@@ -10,7 +10,7 @@ export default class MyDocument extends Document {
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
           />
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2141806853406382"
-     crossorigin="anonymous"/>
+     crossOrigin="anonymous"/>
           <script
             dangerouslySetInnerHTML={{
               __html: `
