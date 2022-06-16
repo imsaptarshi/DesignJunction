@@ -1,3 +1,5 @@
+import sortResources from "./sorter";
+
 const includes = (list: Array<String>, query: String) => {
     for (var i = 0; i < list.length; i++) {
         if (list[i].toLowerCase() === query.toLowerCase()) {
@@ -17,7 +19,7 @@ const isDocPresent = (list: Array<any>, query: String) => {
 }
 
 const SearchResource = (list: any, query: any, sort?: boolean) => {
-    const resources = []
+    const resources: Array<any> = []
 
     for (var i = 0; i < list.length; i++) {
         if (list[i].title.search(RegExp(String(query), "i")) !== -1 || list[i].description.search(RegExp(String(query), "i")) !== -1) {
@@ -33,7 +35,8 @@ const SearchResource = (list: any, query: any, sort?: boolean) => {
     if (sort) {
         return resources.reverse();
     } else {
-        return resources;
+        const _data = sortResources(resources)
+        return _data;
     }
 }
 

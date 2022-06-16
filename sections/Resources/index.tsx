@@ -16,7 +16,7 @@ type Props = {};
 const Resources: React.FC<Props> = () => {
   const { query, resources, setQuery, setResources } = useSearch();
 
-  if (resources.data !== []) {
+  if (resources.data.length > 0) {
     return (
       <div className="relative mx-auto 2xl:max-w-screen-2xl bg-blue-200 px-6 md:px-10 lg:px-20 pb-28">
         <div className="h-56 md:h-20 lg:h-48 xl:h-36"></div>

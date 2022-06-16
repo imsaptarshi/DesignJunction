@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "cross-env NODE_OPTIONS='--openssl-legacy-provider' next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -11,6 +11,7 @@
   "dependencies": {
     "@szhsin/react-menu": "^1.11.0",
     "axios": "^0.21.1",
+    "cross-env": "^7.0.3",
     "mongoose": "^5.13.7",
     "next": "11.1.0",
     "react": "17.0.2",

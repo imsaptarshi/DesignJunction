@@ -5,6 +5,7 @@ import { Toaster } from "react-hot-toast";
 import Kofi from "../components/Badges/kofi.component";
 import Footer from "../components/Footer/footer.component";
 import Navbar from "../components/Navbar/navbar.component";
+import sortResources from "../helpers/sorter";
 import { useSearch } from "../providers/search.provider";
 import Features from "../sections/Features";
 import Landing from "../sections/Landing";
@@ -45,7 +46,8 @@ Home.getInitialProps = async () => {
     `${process.env.NEXT_PUBLIC_DOMAIN}/api/get/resources`
   );
   const json = await res.json();
-  return { data: json };
+  const _data = sortResources(json);
+  return { data: _data };
 };
 
 export default Home;
